@@ -6,7 +6,7 @@ export default function Card(){
         <>
             <div className="card">
                 <h2>1</h2>
-                <img src={Img} alt="charmandr" />
+                <img src={Img} alt="charmander" />
                 <h2>Charmander</h2>
             </div>
         </>
