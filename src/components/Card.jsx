@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "../images/charmander.png"
 
-export default function Card(){
+export default function Card(pokemon, loading){
     return(
         <>
             <div className="card">
