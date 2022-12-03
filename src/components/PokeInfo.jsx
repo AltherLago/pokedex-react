@@ -1,7 +1,8 @@
 import React from "react";
 
-const Pokeinfo = ({ data }) => {
-   
+const PokeInfo = ({ data }) => {
+    
+    // right-content data
     return (
         <>
         {
@@ -40,4 +41,4 @@ const Pokeinfo = ({ data }) => {
         </>
     )
 }
-export default Pokeinfo
+export default PokeInfo

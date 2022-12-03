@@ -1,10 +1,11 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Card from "./Card";
-import Pokeinfo from "./Pokeinfo";
+import PokeInfo from "./PokeInfo";
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+
 const Main=()=>{
+
+    // get links and data
     const [pokeData,setPokeData]=useState([]);
     const [loading,setLoading]=useState(true);
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/")
@@ -12,7 +13,8 @@ const Main=()=>{
     const [prevUrl,setPrevUrl]=useState();
     const [pokeDex,setPokeDex]=useState();
 
-    const pokeFun=async()=>{
+    // get pokemon
+    const pokeFun = async() => {
         setLoading(true)
         const res=await axios.get(url);
         setNextUrl(res.data.next);
@@ -20,7 +22,9 @@ const Main=()=>{
         getPokemon(res.data.results)
         setLoading(false)
     }
-    const getPokemon=async(res)=>{
+
+    // get map pokemon (20)
+    const getPokemon = async(res) => {
        res.map(async(item)=>{
           const result=await axios.get(item.url)
           setPokeData(state=>{
@@ -30,10 +34,12 @@ const Main=()=>{
           })
        })   
     }
+
     useEffect(()=>{
         pokeFun();
         // eslint-disable-next-line
     },[url])
+
     return(
         <>
             <div className="container">
@@ -54,7 +60,7 @@ const Main=()=>{
                     </div>
                 </div>
                 <div className="right-content">
-                   <Pokeinfo data={pokeDex}/>
+                   <PokeInfo data={pokeDex}/>
                 </div>
             </div>
         </>

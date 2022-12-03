@@ -13,19 +13,22 @@ body{
 .container{
     width: 90%;
     margin: auto;
+    padding: 1rem;
     padding-top: 100px;
     display: flex;
-    /* TODO REMOVE */
-    /* flex-direction: column; */
 }
 
-.left-content, .right-content{
-    flex-basis: 50%;
+.left-content {
+    flex-basis: 65%;
+} 
+
+.right-content {
+    flex-basis: 35%;
 }
 
 .left-content{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 0.5fr));
     grid-gap: 2rem;
 }
 
@@ -47,7 +50,7 @@ body{
     color: black;
     position: fixed;
     top: 100px;
-    right: 10px;
+    right: -5%;
 }
 
 .right-content img{
@@ -73,7 +76,8 @@ body{
 .abilities .group{
     background-color: #b74555;
     color: white;
-    padding: 0.5rem;
+    padding: .5rem;
+    margin: .5rem;
     font-size: 12px;
     border-radius: 8px;
 }
@@ -115,6 +119,13 @@ body{
     /* width: 22px; */
     /* height: 22px; */
   }
+    .left-content {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    }
+
+    .right-content {
+        right: 10px;
+    }
 }
 
 /* For medium devices */
@@ -131,6 +142,10 @@ body{
     /* margin-bottom: var(--mb-3); */
   }
 
+    .left-content, .right-content{
+        flex-basis: 50%;
+    }
+
 }
 
 @media screen and (max-width: 576px) {
@@ -139,30 +154,37 @@ body{
         display: flex;
         flex-direction: column;
         padding-top: 0px;
-        /* flex-basis: none; */
-        /* TO DO REMOVE */
-        /* background-color: white; */
     }
 
     .left-content {
-        /* padding: 20%; */
         grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
+        margin-top: 350px;
     }
 
     .card {
-        /* width: 200px; */
         flex-direction: column;
         width: 150px;
     }
 
     .right-content{
-        /* position: ; */
-        /* z-index: 10; */
         top: initial;
         padding-top: 2rem;
         background-color: #FCEEC8;
         width: 100%;
-  }
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .right-content img {
+        display: none;
+    }
+
+    .group {
+        display: flex;
+    }
+
 }
 
 /* For small devices */
@@ -171,9 +193,6 @@ body{
     .container {
         flex-direction: column;
         padding-top: 0px;
-        /* flex-basis: none; */
-        /* TO DO REMOVE */
-        /* background-color: white; */
     }
 
     .left-content {
@@ -186,13 +205,7 @@ body{
         width: 300px;
     }
 
-    .right-content{
-        /* position: ; */
-        /* z-index: 10; */
-        /* TODO SMALLER */
-        top: initial;
-        padding-top: 2rem;
-        background-color: #FCEEC8;
-        width: 100%;
-  }
+    h1 {
+        font-size: 1.3rem;
+    }
 }
